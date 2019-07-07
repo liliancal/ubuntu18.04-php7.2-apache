@@ -7,6 +7,8 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     curl \
     # Install git
     git \
+    zip \
+    unzip \    
     # Install apache
     apache2 \
     # Install php 7.2
@@ -58,10 +60,9 @@ RUN a2ensite typo3.conf
 
 EXPOSE 80 443
 
-WORKDIR /var/www/html
+WORKDIR /var/www/
 
-RUN rm index.html
-
-HEALTHCHECK --interval=5s --timeout=3s --retries=3 CMD curl -f http://localhost || exit 1
+#RUN rm index.html
+#HEALTHCHECK --interval=5s --timeout=3s --retries=3 CMD curl -f http://localhost || exit 1
 
 CMD apachectl -D FOREGROUND 
