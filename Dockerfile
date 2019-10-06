@@ -1,4 +1,5 @@
 FROM ubuntu:18.04
+LABEL maintainer=Lilian Calliot
 
 ENV DEBIAN_FRONTEND=noninteractive
 
