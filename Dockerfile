@@ -1,5 +1,5 @@
 FROM ubuntu:18.04
-LABEL maintainer=Lilian Calliot
+MAINTAINER Lilian Calliot <lilian.calliot@miicom.fr>
 
 ENV DEBIAN_FRONTEND=noninteractive
 
