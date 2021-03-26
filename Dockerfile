@@ -56,6 +56,10 @@ RUN cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
 RUN dpkg-reconfigure -f noninteractive tzdata
 # Suppression du répertoire html
 RUN rm -rf /var/www/html 
+# On créé un utilisateur non root
+RUN useradd -c 'APACHE/PHP user' -m -d /home/miicom -s /bin/sh miicom
+RUN chown -R miicom.miicom /var/lock/apache2 /var/run/apache2 /var/www /usr/sbin/apache2
+USER miicom
 
 EXPOSE 80 443
 
